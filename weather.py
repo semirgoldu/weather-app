@@ -18,6 +18,23 @@ def get_weather(location: str) -> dict:
     }
 
 
+def get_forecast(location: str) -> list:
+    """
+    Returns a 3-day forecast for a given location.
+
+    Args:
+        location: A city or country name e.g. "Turkey"
+
+    Returns:
+        A list of daily forecasts.
+    """
+    return [
+        {"day": "Monday",    "temperature_c": 20, "condition": "Sunny"},
+        {"day": "Tuesday",   "temperature_c": 18, "condition": "Cloudy"},
+        {"day": "Wednesday", "temperature_c": 15, "condition": "Rainy"},
+    ]
+
+
 if __name__ == "__main__":
     weather = get_weather("Turkey")
     print(f"Weather in {weather['location']}:")
