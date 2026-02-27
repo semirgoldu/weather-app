@@ -22,6 +22,11 @@ def test_works_with_any_location():
     assert result["location"] == "Germany"
 
 
+def test_returns_humidity():
+    result = get_weather("Turkey")
+    assert result["humidity_%"] == 65
+
+
 def test_forecast_returns_three_days():
     result = get_forecast("Turkey")
     assert len(result) == 3
