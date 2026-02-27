@@ -24,7 +24,7 @@ def test_works_with_any_location():
 
 def test_returns_humidity():
     result = get_weather("Turkey")
-    assert result["humidity_%"] == 65
+    assert result["unhumidity_%"] == 65
 
 
 def test_forecast_returns_three_days():
