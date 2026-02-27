@@ -1,5 +1,5 @@
 """Tests for the weather module."""
-from weather import get_weather
+from weather import get_weather, get_forecast
 
 
 def test_returns_correct_location():
@@ -20,3 +20,16 @@ def test_returns_condition():
 def test_works_with_any_location():
     result = get_weather("Germany")
     assert result["location"] == "Germany"
+
+
+def test_forecast_returns_three_days():
+    result = get_forecast("Turkey")
+    assert len(result) == 3
+
+
+def test_forecast_has_required_fields():
+    result = get_forecast("Turkey")
+    for day in result:
+        assert "day" in day
+        assert "temperature_c" in day
+        assert "condition" in day
