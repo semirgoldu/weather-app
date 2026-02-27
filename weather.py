@@ -16,6 +16,7 @@ def get_weather(location: str) -> dict:
         "temperature_c": 20,
         "condition": "Sunny",
         "unhumidity_%": 65,
+        "sun_strength": "high",
     }
 
 
@@ -42,3 +43,4 @@ if __name__ == "__main__":
     print(f"  Temperature : {weather['temperature_c']}°C")
     print(f"  Condition   : {weather['condition']}")
     print(f"  Unhumidity  : {weather['unhumidity_%']}%")
+    print(f"  Sun Strength: {weather['sun_strength']}")

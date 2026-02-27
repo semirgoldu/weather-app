@@ -27,6 +27,11 @@ def test_returns_humidity():
     assert result["unhumidity_%"] == 65
 
 
+def test_returns_sun_strength():
+    result = get_weather("Turkey")
+    assert result["sun_strength"] == "high"
+
+
 def test_forecast_returns_three_days():
     result = get_forecast("Turkey")
     assert len(result) == 3
